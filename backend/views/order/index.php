@@ -38,12 +38,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value'=> 'event.fee',
             ],
             'status',
-            //'bukti_pembayaran',
+            'bukti_pembayaran',
             //'created_at',
             //'updated_at',
 
             // ['class' => 'yii\grid\ActionColumn'],
-            ['class' => ActionColumn::className(),'template'=>'{view} {update}' ]
+            //['class' => ActionColumn::className(),'template'=>'{view} {update}' ]
         ],
     ]); ?>
 

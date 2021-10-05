@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Event */
 
-$this->title = $model->id;
+$this->title = $model->event_name;
 $this->params['breadcrumbs'][] = ['label' => 'Events', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -40,5 +40,37 @@ $this->params['breadcrumbs'][] = $this->title;
             'updated_at:datetime',
         ],
     ]) ?>
+
+<h3>List Peserta</h3>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nama Peserta</th>
+            <th>Kontak</th>
+        </tr>
+    </thead>
+    <!-- / -->
+    <tbody>
+    <?php foreach ($model->userEvents as $user): ?>
+        <tr>
+            <td>1</td>
+            <td>
+                <?php
+                    $userId = $user->user;
+                    echo $userId->name;
+                ?>
+            </td>
+            <td>
+                <?php
+                    $userId = $user->user;
+                    echo $userId->email;
+                ?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
 
 </div>

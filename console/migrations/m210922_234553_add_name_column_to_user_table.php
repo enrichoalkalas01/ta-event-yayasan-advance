@@ -13,6 +13,7 @@ class m210922_234553_add_name_column_to_user_table extends Migration
     public function safeUp()
     {
         $this->addColumn('{{%user}}', 'name', $this->string(255)->after('id'));
+        $this->addColumn('{{%user}}', 'role', $this->tinyInteger(2)->after('email'));
     }
 
     /**
@@ -21,5 +22,6 @@ class m210922_234553_add_name_column_to_user_table extends Migration
     public function safeDown()
     {
         $this->dropColumn('{{%user}}', 'name');
+        $this->dropColumn('{{%user}}', 'role');
     }
 }

@@ -2,16 +2,13 @@
 
 namespace backend\controllers;
 
-use common\models\Order;
-use backend\models\search\OrderSearch;
+use common\models\User;
+use backend\models\search\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * OrderController implements the CRUD actions for Order model.
- */
-class OrderController extends Controller
+class PesertaController extends \yii\web\Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +29,13 @@ class OrderController extends Controller
     }
 
     /**
-     * Lists all Order models.
+     * Lists all User models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OrderSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $searchModel = new UserSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams, 0);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -47,8 +44,8 @@ class OrderController extends Controller
     }
 
     /**
-     * Displays a single Order model.
-     * @param int $id ID
+     * Displays a single User model.
+     * @param int $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -60,22 +57,17 @@ class OrderController extends Controller
     }
 
     /**
-     * Finds the Order model based on its primary key value.
+     * Finds the User model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $id ID
-     * @return Order the loaded model
+     * @param int $id
+     * @return User the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Order::findOne($id)) !== null) {
-            //$model->with(['event','user']);
+        if (($model = User::findOne($id)) !== null) {
             return $model;
         }
-
-        // if (($model = Order::find()->where(['id' => $id])->one()) !== null) {
-        //     return $model;
-        // }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
