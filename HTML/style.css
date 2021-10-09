@@ -1,0 +1,135 @@
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit
+}
+
+#app .nav-box .col-md-12 {
+    padding: 0;
+}
+
+#app .banner-box .content {
+    padding: 0;
+}
+
+#app .banner-box .content .image-box {
+    width: 100%;
+    height: 500px;
+    background-color: #dedede;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+#app .banner-box .content .image-box .backdrop {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app .banner-box .content .image-box .backdrop .box-text {
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+#app .section-1 {
+    padding: 5% 0 0;
+}
+
+#app .section-1 .product-box {
+    padding: 0 2.5%;
+}
+
+#app .section-1 .product-box .products {
+    margin-bottom: 20px;
+}
+
+#app .section-1 .product-box .wrapper-product {
+    border-radius: 10px 10px 10px 10px;
+}
+
+#app .section-1 .product-box .wrapper-product .image-box .images {
+    width: 100%;
+    height: 150px;
+    background-color: #dedede;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#app .section-1 .product-box .wrapper-product .text-box {
+    padding: 10px 10px;
+}
+
+#app .section-2 {
+    padding: 5% 0 0;
+}
+
+#app .section-2 .section-box .wrapper-section .left-side.text-box,
+#app .section-2 .section-box .wrapper-section .right-side.text-box {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app .section-2 .section-box .wrapper-section .left-side.text-box .wrapper-text,
+#app .section-2 .section-box .wrapper-section .right-side.text-box .wrapper-text {
+    width: 85%;
+}
+
+#app .section-2 .section-box .wrapper-section .left-side.text-box h4,
+#app .section-2 .section-box .wrapper-section .right-side.text-box h4 {
+    text-align: center;
+}
+
+#app .section-2 .section-box .wrapper-section .left-side.text-box p,
+#app .section-2 .section-box .wrapper-section .right-side.text-box p {
+    text-align: justify;
+}
+
+#app .section-2 .section-box .wrapper-section .right-side.images-box,
+#app .section-2 .section-box .wrapper-section .left-side.images-box {
+    padding: 0;
+}
+
+#app .section-2 .section-box .wrapper-section .right-side.images-box .image,
+#app .section-2 .section-box .wrapper-section .left-side.images-box .image {
+    width: 100%;
+    height: 400px;
+    background-color: #dedede;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#app .footer {
+    background-color: #212529;
+    color: #fff;
+}
+
+#app .footer .footer-box {
+    padding: 2.5% 0;
+}
+
+#app .footer .footer-box ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#app .footer .footer-box ul li {
+    margin: 0 20px;
+}
