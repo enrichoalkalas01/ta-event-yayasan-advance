@@ -15,6 +15,8 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\Event;
+use frontend\models\EventSearch;
 
 /**
  * Site controller
@@ -255,5 +257,10 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+
+    public function actionEvent() {
+        $model = new EventSearch;
+        $model->search();
     }
 }
