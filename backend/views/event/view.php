@@ -41,36 +41,49 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
 
-<h3>List Peserta</h3>
-
-<table class="table table-sm">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Nama Peserta</th>
-            <th>Kontak</th>
-        </tr>
-    </thead>
-    <!-- / -->
-    <tbody>
-    <?php foreach ($model->userEvents as $user): ?>
-        <tr>
-            <td>1</td>
-            <td>
-                <?php
-                    $userId = $user->user;
-                    echo $userId->name;
-                ?>
-            </td>
-            <td>
-                <?php
-                    $userId = $user->user;
-                    echo $userId->email;
-                ?>
-            </td>
-        </tr>
-    <?php endforeach; ?>
-    </tbody>
-</table>
-
 </div>
+
+<div class="event-user">
+    <a href="/user-event/create?event_id=<?= $model->id ?>" class="btn btn-success">
+        Tambah Peserta
+    </a>
+
+    <h3>List Peserta</h3>
+    
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nama Peserta</th>
+                <th>Kontak</th>
+                <th></th>
+            </tr>
+        </thead>
+        <!-- / -->
+        <tbody>
+        <?php foreach ($model->userEvents as $user): ?>
+            <tr>
+                <td>1</td>
+                <td>
+                    <?php
+                        $userId = $user->user;
+                        echo $userId->name;
+                    ?>
+                </td>
+                <td>
+                    <?php
+                        $userId = $user->user;
+                        echo $userId->email;
+                    ?>
+                </td>
+                <td>
+                    <a href="/user-event/delete?user_id=<?php $userId = $user->user; echo $userId->id; ?>&event_id=<?= $model->id ?>" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post">
+                        delete
+                    </a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
