@@ -98,4 +98,16 @@ class Event extends \yii\db\ActiveRecord
     {
         return new \common\models\query\EventQuery(get_called_class());
     }
+
+    public function getImageUrl(){
+        if($this->image){
+            return Yii::$app->params['frontendUrl'] . 'storage' . $this->image;
+        }
+
+        //return Yii::$app->params
+    }
+
+    public function getShortDescription(){
+        return \yii\helpers\StringHelper::truncateWords(strip_tags($this->description), 10);
+    } 
 }
