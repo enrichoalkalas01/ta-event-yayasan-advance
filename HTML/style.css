@@ -3,6 +3,10 @@ a {
     color: inherit
 }
 
+.card {
+    height: 100%;
+}
+
 a:hover {
     text-decoration: none;
     color: inherit
@@ -45,30 +49,56 @@ a:hover {
     padding: 5% 0 0;
 }
 
-#app .section-1 .product-box {
+#app .section-1 .product-box,
+#wrapper-events {
     padding: 0 2.5%;
 }
 
-#app .section-1 .product-box .products {
+#app .section-1 .product-box .products,
+#wrapper-events .event-box {
     margin-bottom: 20px;
 }
 
-#app .section-1 .product-box .wrapper-product {
+#app .section-1 .product-box .wrapper-product,
+#wrapper-events .event-box .wrapper-event {
     border-radius: 10px 10px 10px 10px;
 }
 
-#app .section-1 .product-box .wrapper-product .image-box .images {
+#wrapper-events .event-box .wrapper-event .products {
+    margin-bottom: 20px;
+}
+
+#app .section-1 .product-box .wrapper-product .image-box .images,
+#wrapper-events .event-box .wrapper-event .image-box .images {
     width: 100%;
     height: 150px;
     background-color: #dedede;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
 }
 
-#app .section-1 .product-box .wrapper-product .text-box {
+#app .section-1 .product-box .wrapper-product .text-box,
+#wrapper-events .event-box .wrapper-event .text-box {
     padding: 10px 10px;
+}
+
+#app .section-1 .product-box .wrapper-product .text-box p,
+#wrapper-events .event-box .wrapper-event .text-box p {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+#app .section-1 .product-box .wrapper-product .text-box .box-price,
+#wrapper-events .event-box .wrapper-event .text-box .box-price {
+    font-size: 12px;
+    display: none;
+}
+
+#app .section-1 .product-box .wrapper-product .text-box .box-price.active,
+#wrapper-events .event-box .wrapper-event .text-box .box-price.active {
+    display: block;
 }
 
 #app .section-2 {
