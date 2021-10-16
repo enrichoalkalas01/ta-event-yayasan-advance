@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\FileHelper;
 
 /**
  * This is the model class for table "event".
@@ -23,6 +24,11 @@ use yii\behaviors\TimestampBehavior;
  */
 class Event extends \yii\db\ActiveRecord
 {
+    /**
+     * @var \yii\web\UploadedFile
+     */
+    public $imageFile;
+
     /**
      * {@inheritdoc}
      */
@@ -46,7 +52,12 @@ class Event extends \yii\db\ActiveRecord
             [['event_name', 'date_start', 'date_end'], 'required'],
             [['date_start', 'date_end'], 'safe'],
             [['description'], 'string'],
-            [['fee'], 'integer'],
+            [['imageFile'], 'image', 'extensions' => 'png, jpg, jpeg, webp',
+                'maxSize' => 10 * 1024 * 1024,
+                //'minWidth' => 100, 'maxWidth' => 1000,
+                //'minHeight' => 100, 'maxHeight' => 1000
+            ],
+            [['fee','created_at','updated_at'], 'integer'],
             [['event_name'], 'string', 'max' => 255],
             [['image'], 'string', 'max' => 2000],
         ];
@@ -63,7 +74,8 @@ class Event extends \yii\db\ActiveRecord
             'date_start' => 'Date Start',
             'date_end' => 'Date End',
             'description' => 'Description',
-            'image' => 'Image',
+            'image' => 'Event Image',
+            'imageFile' => 'Event Image',
             'fee' => 'Fee',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
@@ -97,6 +109,29 @@ class Event extends \yii\db\ActiveRecord
     public static function find()
     {
         return new \common\models\query\EventQuery(get_called_class());
+    }
+
+    public function save($runValidation = true, $attributeNames = null){
+        if ($this->imageFile) {
+            $this->image = '/events/' . Yii::$app->security->generateRandomString() . '/' . $this->imageFile->name;
+        }
+
+        $transaction = Yii::$app->db->beginTransaction();
+        $ok = parent::save($runValidation, $attributeNames);
+
+        if ($ok && $this->imageFile) {
+            $fullPath = Yii::getAlias('@frontend/web/storage' . $this->image);
+            $dir = dirname($fullPath);
+            if (!FileHelper::createDirectory($dir) | !$this->imageFile->saveAs($fullPath)) {
+                $transaction->rollBack();
+
+                return false;
+            }
+        }
+
+        $transaction->commit();
+
+        return $ok;
     }
 
     public function getImageUrl(){

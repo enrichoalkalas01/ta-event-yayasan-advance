@@ -6,6 +6,7 @@ use common\models\User;
 use backend\models\search\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 
 class PesertaController extends \yii\web\Controller
@@ -18,6 +19,17 @@ class PesertaController extends \yii\web\Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'only' => ['index','view'],
+                    'rules' => [
+                        [
+                            'actions' => ['index','view'],
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
