@@ -34,7 +34,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'date_start',
             'date_end',
             'description:ntext',
-            'image',
+            [
+                'attribute' => 'image',
+                'format' => ['html'],
+                'value' => fn() => Html::img($model->getImageUrl(), ['style' => 'width: 50px']),
+            ],
             'fee',
             'created_at:datetime',
             'updated_at:datetime',

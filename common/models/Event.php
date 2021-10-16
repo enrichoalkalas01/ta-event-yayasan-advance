@@ -135,9 +135,11 @@ class Event extends \yii\db\ActiveRecord
     }
 
     public function getImageUrl(){
-        if($this->image){
-            return Yii::$app->params['frontendUrl'] . 'storage' . $this->image;
-        }
+        return Yii::$app->params['frontendUrl'] . '/storage/' . $this->image;
+        
+        // if($this->image){
+        //     return Yii::$app->params['frontendUrl'] . 'storage' . $this->image;
+        // }
 
         //return Yii::$app->params
     }
