@@ -45,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr>
                 <th>#</th>
                 <th>Event</th>
+                <th></th>
             </tr>
         </thead>
         <!-- / -->
@@ -57,6 +58,11 @@ $this->params['breadcrumbs'][] = $this->title;
                         $eventId = $event->event;
                         echo $eventId->event_name 
                     ?>
+                </td>
+                <td>
+                    <a href="/user-event/delete?user_id=<?= $model->id ?>&event_id=<?php $eventId = $event->event; echo $eventId->id; ?>" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post">
+                        <i class="fas fa-fw fa-trash"></i>
+                    </a>
                 </td>
             </tr>
         <?php endforeach; ?>

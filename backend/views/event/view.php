@@ -78,7 +78,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </td>
                 <td>
                     <a href="/user-event/delete?user_id=<?php $userId = $user->user; echo $userId->id; ?>&event_id=<?= $model->id ?>" title="Delete" aria-label="Delete" data-pjax="0" data-confirm="Are you sure you want to delete this item?" data-method="post">
-                        delete
+                        <i class="fas fa-fw fa-trash"></i>
                     </a>
                 </td>
             </tr>
