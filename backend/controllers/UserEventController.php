@@ -23,7 +23,6 @@ class UserEventController extends Controller
             [
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['create','delete'],
                     'rules' => [
                         [
                             'actions' => ['create','delete'],

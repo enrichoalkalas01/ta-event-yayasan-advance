@@ -24,7 +24,6 @@ class OrderController extends Controller
             [
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['index','view'],
                     'rules' => [
                         [
                             'actions' => ['index','view'],
