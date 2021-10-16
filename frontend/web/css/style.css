@@ -163,3 +163,60 @@ a:hover {
 #app .footer .footer-box ul li {
     margin: 0 20px;
 }
+
+#events-detail {
+    padding: 2.5% 2.5%;
+}
+
+#events-detail .wrapper-left {
+    
+}
+
+#events-detail .wrapper-left .wrapper-box {
+
+}
+
+#events-detail .wrapper-left .wrapper-box .title-box {
+
+}
+
+#events-detail .wrapper-left .wrapper-box .description-box {
+    text-align: justify;
+}
+
+#events-detail .wrapper-right {
+    
+}
+
+#events-detail .wrapper-right .wrapper-box {
+    padding: 0 5%;
+}
+
+#events-detail .wrapper-right .card {
+    padding: 0;
+}
+
+#events-detail .wrapper-right .card .wrapper-top {
+    padding: 10px;
+}
+
+#events-detail .wrapper-right .card .wrapper-top h5 {
+    margin: 0;
+}
+
+#events-detail .wrapper-right .card .wrapper-middle {
+    padding: 2.5% 2.5%;
+}
+
+#events-detail .wrapper-right .card .wrapper-middle .bold {
+    font-weight: 700;
+}
+
+#events-detail .wrapper-right .card .wrapper-middle .thin {
+    font-size: 12px;
+}
+
+#events-detail .wrapper-right .card .ticket-box {
+    padding: 2.5%;
+}
+
