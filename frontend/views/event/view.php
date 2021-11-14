@@ -59,8 +59,11 @@ $this->params['breadcrumbs'][] = $this->title;
                             <span>Rp.</span>
                             <span><?php echo $model->fee ?></span>
                         </div>
-                        <form class="ticket-box" action="" method="post">
-                            <input name="ticket-data" value="1" id="ticket0-data" hidden />
+                        <form class="ticket-box" action="/user-event/create" method="post">
+                            <!-- <input name="user_id" value="1" id="user_id" hidden /> -->
+                            <input type="hidden" name="user_id" value="<?php echo Yii::$app->user->id ?>" id="user_id" />
+                            <input type="hidden" name="event_id" value="<?php echo $model->id ?>" id="event_id" />
+                            <input type="hidden" name="fee" value="<?php echo $model->fee ?>" id="fee" />
                             <button type="submit" class="btn btn-primary">Join Event</button>
                         </form>
                     </div>
