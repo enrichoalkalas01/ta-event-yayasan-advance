@@ -38,12 +38,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value'=> 'event.fee',
             ],
             'status',
-            //'bukti_pembayaran',
+            [
+                'label' => 'Bukti Pembayaran',
+                'attribute' => 'bukti_pembayaran',
+                'content' => function ($model) {
+                    /** @var \common\models\Order $model */
+                    return Html::img($model->getImageUrl(), ['style' => 'width: 50px']);
+                }
+            ],
+            // 'bukti_pembayaran',
             //'created_at',
             //'updated_at',
 
             // ['class' => 'yii\grid\ActionColumn'],
-            ['class' => ActionColumn::className(),'template'=>'{view} {update}' ]
+            //['class' => ActionColumn::className(),'template'=>'{view} {update}' ]
         ],
     ]); ?>
 

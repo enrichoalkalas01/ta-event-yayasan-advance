@@ -32,7 +32,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'date_start',
             'date_end',
             // 'description:ntext',
-            //'image',
+            [
+                'label' => 'Image',
+                'attribute' => 'image',
+                'content' => function ($model) {
+                    /** @var \common\models\Event $model */
+                    return Html::img($model->getImageUrl(), ['style' => 'width: 50px']);
+                }
+            ],
             'fee',
             //'created_at',
             //'updated_at',

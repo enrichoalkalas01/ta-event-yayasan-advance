@@ -1,17 +1,19 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\bootstrap4\ActiveForm;
 use dosamigos\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Event */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form yii\bootstrap4\ActiveForm */
 ?>
 
 <div class="event-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'options' => ['enctype' => 'multipart/form-data']
+    ]); ?>
 
     <?= $form->field($model, 'event_name')->textInput(['maxlength' => true]) ?>
 
@@ -24,16 +26,22 @@ use dosamigos\ckeditor\CKEditor;
         'preset' => 'basic'
     ]) ?>
 
-    <!-- <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?> -->
+    <?= $form->field($model, 'imageFile', [
+        'template' => '
+                <div class="custom-file">
+                    {input}
+                    {label}
+                    {error}
+                </div>
+            ',
+        'labelOptions' => ['class' => 'custom-file-label'],
+        'inputOptions' => ['class' => 'custom-file-input']
+    ])->textInput(['type' => 'file']) ?>
 
     <?= $form->field($model, 'fee')->textInput([
         'maxlength' => true,
         'type' => 'number'
     ]) ?>
-
-    <!-- <?= $form->field($model, 'created_at')->textInput() ?> -->
-
-    <!-- <?= $form->field($model, 'updated_at')->textInput() ?> -->
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

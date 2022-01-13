@@ -5,7 +5,9 @@ namespace backend\controllers;
 use common\models\Event;
 use backend\models\search\EventSearch;
 use yii\web\Controller;
+use yii\web\UploadedFile;
 use yii\web\NotFoundHttpException;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 
 /**
@@ -21,6 +23,16 @@ class EventController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'rules' => [
+                        [
+                            'actions' => ['create','index','view','update','delete'],
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
@@ -67,6 +79,7 @@ class EventController extends Controller
     public function actionCreate()
     {
         $model = new Event();
+        $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {

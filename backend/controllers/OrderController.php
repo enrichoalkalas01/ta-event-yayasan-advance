@@ -6,6 +6,7 @@ use common\models\Order;
 use backend\models\search\OrderSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 
 /**
@@ -21,6 +22,16 @@ class OrderController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'rules' => [
+                        [
+                            'actions' => ['index','view'],
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
@@ -60,26 +71,6 @@ class OrderController extends Controller
     }
 
     /**
-     * Updates an existing Order model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $id ID
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
      * Finds the Order model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
@@ -89,9 +80,13 @@ class OrderController extends Controller
     protected function findModel($id)
     {
         if (($model = Order::findOne($id)) !== null) {
-            // $model->joinWith(['event','user']);
+            //$model->with(['event','user']);
             return $model;
         }
+
+        // if (($model = Order::find()->where(['id' => $id])->one()) !== null) {
+        //     return $model;
+        // }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }

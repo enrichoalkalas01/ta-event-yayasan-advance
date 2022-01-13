@@ -56,6 +56,12 @@ AppAsset::register($this);
                     <span>Pembayaran</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo \yii\helpers\Url::to(['/peserta/index']) ?>">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Peserta</span></a>
+            </li>
+
             <!-- Nav Item - Tables -->
             <!-- <li class="nav-item">
                 <a class="nav-link" href="">
