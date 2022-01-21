@@ -6,9 +6,9 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
-        'request' => [
-            'enableCsrfValidation' => false,
-        ],
+        // 'request' => [
+        //     'enableCsrfValidation' => true,
+        // ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
