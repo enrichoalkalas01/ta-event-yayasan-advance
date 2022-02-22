@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 /** @var \yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'My Yii Application';
+    $this->title = 'Anggi Foundation';
 ?>
 
 <section id="app2" class="container-fluid">
