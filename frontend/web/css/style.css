@@ -483,11 +483,11 @@ a:hover {
     font-family: "Nunito";
 }
 
-#w1 {
+.navbar {
     background-color: #0d3457 !important;
 }
 
-.site-login {
+.site-login, .site-signup {
     height: 100vh;
     background-color: #46a4f7;
 }
