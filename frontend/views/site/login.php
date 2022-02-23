@@ -14,10 +14,10 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="row site-login">
     <div class="col-12 wrapper-login">
         <div class="row wrapper-box">
-            <div class="col-6 card">
+            <div class="col-12 card">
                 <div class="row wrapper-card">
                     <div class="col-12">
-                        <h1><?= Html::encode($this->title) ?></h1>
+                        <h2><?= Html::encode($this->title) ?></h2>
                         <p>Please fill out the following fields to login:</p>   
                     </div>
                     <div class="col-12">
