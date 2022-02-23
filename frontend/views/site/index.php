@@ -27,7 +27,7 @@
         </div>
         <div class="col-12 content-box">
             <div class="row wrapper-content-box">
-                <div class="col-12 col-lg-4 card-content">
+                <div class="col-12 col-lg-4 mb-4 card-content">
                     <div class="card" style="width: 18rem;">
                         <div class="icon-box text-center">
                             <i class="fa-solid fa-graduation-cap"></i>
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4 card-content">
+                <div class="col-12 col-lg-4 mb-4 card-content">
                     <div class="card" style="width: 18rem;">
                         <div class="icon-box text-center">
                             <i class="fa-solid fa-people-carry-box"></i>
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4 card-content">
+                <div class="col-12 col-lg-4 mb-4 card-content">
                     <div class="card" style="width: 18rem;">
                         <div class="icon-box text-center">
                             <i class="fa-solid fa-hand-holding-heart"></i>

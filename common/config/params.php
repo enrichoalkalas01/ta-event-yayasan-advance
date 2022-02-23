@@ -1,5 +1,6 @@
 <?php
 return [
+    'frontendUrl' => 'http://ta.localhost',
     'adminEmail' => 'admin@example.com',
     'supportEmail' => 'support@example.com',
     'senderEmail' => 'noreply@example.com',

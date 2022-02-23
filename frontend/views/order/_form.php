@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="order-form">
-
+    
     <?php $form = ActiveForm::begin([
         'options' => ['enctype' => 'multipart/form-data']
     ]); ?>
@@ -39,6 +39,7 @@ use yii\widgets\ActiveForm;
     <!-- <?= $form->field($model, 'updated_at')->textInput() ?> -->
 
     <div class="form-group">
+        
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
