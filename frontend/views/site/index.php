@@ -93,7 +93,7 @@
         <div class="col-12 col-lg-6 right-content">
             <div class="row wrapper-content">
                 <div class="col-12 wrapper-images">
-                    <div class="images" style="background-image: url('images/fe1.jpg')"></div>
+                    <div class="images" style="background-image: url('<?= Yii::$app->request->baseUrl ?>/frontend/web/uploads/fe1.jpg')"></div>
                 </div>
             </div>
         </div>
