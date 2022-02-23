@@ -14,6 +14,9 @@ use yii\widgets\ActiveForm;
         'options' => ['enctype' => 'multipart/form-data']
     ]); ?>
 
+    <!-- <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" /> -->
+    <input id="form-token" type="hidden" name="<?=Yii::$app->request->csrfParam?>" value="<?=Yii::$app->request->csrfToken?>"/>
+
     <?= $form->field($model, 'user_id')->hiddenInput(['value' => $user_id])->label(false) ?>
 
     <?= $form->field($model, 'event_id')->hiddenInput(['value' => $event_id])->label(false) ?>
