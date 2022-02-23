@@ -115,7 +115,7 @@
                         relasi yang lebih luas. 
                     </p>
 
-                    <p>
+                    <!-- <p>
                         Anggi Foundation pernah menjalin kerjasama dengan berbagai organisasi di tingkat regional (Asia Tenggara) dan Internasional.
                         <b> Organisasi tersebut antara lain: Youth Coordination Center International (YCCI); </b>
                         <b> President Office for Youth Affairs (Filipina); </b>
@@ -126,7 +126,7 @@
                         <b> Singapore Young Enterpreneus Network; </b>
                         <b> APEC Youth Forum; </b>
                         dan <b> Yayasan Penyayang di Malaysia. </b>
-                    </p>
+                    </p> -->
                 </div>
             </div>
         </div>
