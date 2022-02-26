@@ -48,5 +48,11 @@ use dosamigos\ckeditor\CKEditor;
     </div>
 
     <?php ActiveForm::end(); ?>
-
+    
+    <script>
+        let eventStart = document.querySelector("#event-date_start")
+        eventStart.setAttribute("type", "date")
+        let eventEnd = document.querySelector("#event-date_end")
+        eventEnd.setAttribute("type", "date")
+    </script>
 </div>
